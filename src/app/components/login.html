@@ -1,0 +1,105 @@
+
+<div ng-controller="LoginController" ng-cloak layout="column" layout-fill style="background:none;">
+    <div class="login-panel md-whiteframe-10dp" hide-xs>
+        <md-toolbar class="md-warn md-hue-2">
+            <div class="md-toolbar-tools">
+
+                <h2 class="md-flex">Mathematics Secure Resource</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+                    <md-icon md-font-set="material-icons"> lock </md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <div layout="row">
+            <div flex=33 layout="column" layout-align="center center">
+                <div><img src="http://www.math.fsu.edu/res/img/fsumathseal_small_color_150.png"></div>
+            </div>
+            <div flex>
+                <md-content style="padding:30px;" md-theme="docs-dark">
+                    <form name="loginForm">
+                        <md-input-container class="md-block">
+                            <label>Username</label>
+                            <input ng-model="user.username" id="username">
+                        </md-input-container>
+                        <md-input-container class="md-block" id="special">
+                            <label>Password</label>
+                            <input ng-model="user.password" type="password" id="password">
+                        </md-input-container>
+                        <div layout="row">
+                            <span flex></span>
+                            <md-button class="md-primary">Forgot Password</md-button>
+                            <md-button class="md-raised md-warn md-hue-2" ng-click="login()">Login</md-button>
+                        </div>
+                    </form>
+                </md-content>
+            </div>
+        </div>
+    </div>
+
+    <div hide show-xs layout="row" layout-fill layout-align="center center">
+        <div flex style="padding:20px">
+            <div style="width:100%;">
+                <md-content style="padding:30px;">
+                    <div style="text-align:center;"><img src="http://www.math.fsu.edu/res/img/mathematics_2015_text_50.png" width="95%"></div>
+                    <form name="loginForm">
+                        <md-input-container class="md-block">
+                            <label>Username</label>
+                            <input ng-model="user.username">
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>Password</label>
+                            <input ng-model="user.password" type="password">
+                        </md-input-container>
+                        <div layout="column">
+                            <md-button class="md-raised md-warn md-hue-2" ng-click="login()">Login</md-button>
+                            <md-button class="md-primary">Forgot Password</md-button>
+                        </div>
+                    </form>
+                </md-content>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--
+<md-content layout="row" layout-align="center">
+    <div layout="column">
+        <div flex layout="column" layout-fill> <!-- this is what I change
+            <div flex="33">
+                <md-input-container>
+                    <label>Enter Room's Name</label>
+                    <input ng-model="test" placeholder="Enter Room's Name">
+                </md-input-container>
+            </div>
+            <div flex="66">
+                <md-button class="md-raised md-accent">
+                    Create Chat Room
+                </md-button>
+            </div>
+        </div>
+    </div>
+
+</md-content>
+-->
+<!--
+                <md-whiteframe class="md-whiteframe-z1" layout="column" flex="30" layout-padding>
+                    <md-content md-theme="docs-dark">
+                        <md-input-container>
+                            <label>Email</label>
+                            <input ng-model="user.email">
+                        </md-input-container>
+                        <md-input-container>
+                            <label>Password</label>
+                            <input ng-model="user.password" type="password">
+                        </md-input-container>
+                        <md-input-container layout-align="center center">
+                            <div layout="row" layout-sm="column" layout-margin>
+                                <md-button class="md-raised" flex="50" flex-sm="100">Login</md-button>
+                                <md-button class="md-raised md-primary" flex="50" flex-sm="100">Register</md-button>
+                            </div>
+                        </md-input-container>
+                    </md-content>
+                </md-whiteframe>
+                -->
