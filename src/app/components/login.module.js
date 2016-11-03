@@ -12,12 +12,7 @@ import LoginController from './login.controller';
 export default angular.module('loginModule', [])
     .controller('LoginController', LoginController)
     /*.component('loginComponent', {
-        templateUrl: './login.html',
+        templateUrl: 'src/app/components/login.html',
         controller: LoginController,
-        controllerAs: lnCtrl,
-        binding: {
-
-        }
-    }*/
-
-    ;
+        controllerAs: lnCtrl
+    })*/;

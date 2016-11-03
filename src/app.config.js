@@ -11,30 +11,23 @@ export default function ($stateProvider, $urlRouterProvider, $mdThemingProvider,
             controller: 'LoginController',
             controllerAs: 'lnCtrl'
         })
-        .state('home.dashboard', {
-            url: '/dashboard',
-            templateUrl: 'app/views/dashboard.html',
-            data: {
-                title: 'Dashboard'
-            }
+        .state('home', {
+            url: '/home',
+            templateUrl: 'src/app/states/home/home.html',
+            controller: 'HomeController',
+            controllerAs: 'hmCtrl'
+        })
+        .state('home.feed', {
+            url: '/home/feed',
+            templateUrl: 'src/app/states/home/feed/feed.html',
+            controller: 'FeedController',
+            controllerAs: 'fdCtrl'
         })
         .state('home.profile', {
-            url: '/profile',
-            templateUrl: 'app/views/profile.html',
+            url: '/home/profile',
+            templateUrl: 'src/app/states/home/profile/profile.html',
             controller: 'ProfileController',
-            controllerAs: 'vm',
-            data: {
-                title: 'Profile'
-            }
-        })
-        .state('home.table', {
-            url: '/table',
-            controller: 'TableController',
-            controllerAs: 'vm',
-            templateUrl: 'app/views/table.html',
-            data: {
-                title: 'Table'
-            }
+            controllerAs: 'peCtrl'
         });
 
     $urlRouterProvider.otherwise('/dashboard');

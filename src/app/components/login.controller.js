@@ -5,12 +5,23 @@
 
 export default class LoginController {
 
-    constructor($scope) {
+    constructor($state) {
+        this.$state = $state;
 
-        this.$scope = $scope;
+
+        this.user = {
+            username: '',
+            password: ''
+        };
+
+    }
+
+    login() {
+
+        this.$state.go('home');
 
     }
 
 }
 
-LoginController.$inject = ['$scope'];
+LoginController.$inject = ['$state'];
