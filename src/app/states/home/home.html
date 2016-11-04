@@ -1,25 +1,26 @@
-<md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left"
-            class="md-whiteframe-z2 md-sidenav-left">
-    <md-toolbar md-theme="custom" class="md-hue-1 md-whiteframe-z2">
-        <md-button layout="row" layout-align="center center" class="md-toolbar-tools md-warn">
-            <h1>AMD</h1>
-        </md-button>
-    </md-toolbar>
-    <md-button ng-repeat-start="item in hmCtrl.menuItems" layout="column" layout-align="center center"
-               flex class="capitalize" ng-click="hmCtrl.selectItem(item)"
-               ui-sref-active="md-warn" ui-sref="{{item.sref}}">
-        <div hide-sm hide-md class="md-tile-content">
-            <i class="material-icons md-36">{{item.icon}}</i>
-        </div>
-        <div class="md-tile-content">
-            {{item.name}}
-        </div>
-    </md-button>
-    <md-divider ng-repeat-end></md-divider>
-</md-sidenav>
 
 <div layout="column" flex>
-    <md-toolbar layout="row" layout-align="center center">
+    <md-toolbar layout="row" class="md-hue-2">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings" ng-click="hmCtrl.toggleNav('left')">
+                <ng-md-icon icon="menu" style="fill: white" size="24"></ng-md-icon>
+            </md-button>
+            <h3 class="md-display-3">
+                ix Service
+            </h3>
+            <span flex></span>
+            <md-button class="md-icon-button" aria-label="Favorite">
+                <ng-md-icon icon="notifications" style="fill: white" size="24"></ng-md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="More">
+                <ng-md-icon icon="message" style="fill: white" size="24"></ng-md-icon>
+            </md-button>
+        </div>
+
+        <!--
+        <section layout-align="start center" layout-fill flex>
+            <h1 hide-xs> ix </h1>
+        </section>
         <section layout-align="start center" layout-fill flex>
             <md-button hide-gt-sm ng-click="vm.toggleItemsList()" aria-label="Menu">
                 <i class="material-icons">menu</i>
@@ -37,11 +38,22 @@
                 <i class="material-icons">menu</i>
             </md-button>
         </section>
+        -->
     </md-toolbar>
 
-    <md-content flex class="md-padding page-content">
-        <div ui-view></div>
-    </md-content>
+    <section layout="row" flex>
+        <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left"
+                    class="md-whiteframe-z2 md-sidenav-left">
+            <md-button ng-repeat="item in hmCtrl.menuItems" layout="column" layout-align="center center"
+                       flex  ng-click="hmCtrl.selectItem(item)"
+                       ui-sref-active="md-accent" ui-sref="{{item.sref}}">
+                <ng-md-icon icon="{{item.icon}}" style="fill: black" size="24"></ng-md-icon>{{item.name}}
+            </md-button>
+        </md-sidenav>
+        <md-content flex class="md-padding page-content">
+            <div ui-view></div>
+        </md-content>
+    </section>
 </div>
 
 <md-sidenav md-component-id="right"

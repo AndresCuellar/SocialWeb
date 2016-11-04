@@ -5,29 +5,30 @@
 
 export default class HomeController {
 
-    constructor($state) {
+    constructor($state, $mdSidenav) {
         this.$state = $state;
+        this.$mdSidenav = $mdSidenav;
 
 
         this.menuItems = [
             {
                 name: 'Feed',
-                icon: 'dashboard',
+                icon: 'home',
                 sref: '.feed'
             },
             {
                 name: 'Busqueda',
-                icon: 'person',
+                icon: 'search',
                 sref: '.profile'
             },
             {
                 name: 'Amigos',
-                icon: 'view_module',
+                icon: 'group',
                 sref: '.table'
             },
             {
                 name: 'Estadisticas',
-                icon: 'view_module',
+                icon: 'show_chart',
                 sref: '.table'
             }
         ];
@@ -38,8 +39,12 @@ export default class HomeController {
 
     }
 
+    toggleNav (navId) {
+        this.$mdSidenav(navId).toggle();
+    }
+
 
 
 }
 
-HomeController.$inject = ['$state'];
+HomeController.$inject = ['$state','$mdSidenav'];
