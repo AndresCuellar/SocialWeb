@@ -5,36 +5,67 @@
 
 export default class FeedController {
 
-    constructor($state) {
-        this.$state = $state;
+    constructor($scope) {
 
+        this.$scope = $scope;
 
-        this.menuItems = [
+        this.feed = [
             {
-                name: 'Home',
-                icon: 'dashboard',
-                sref: '.dashboard'
+                postId: 1,
+                postDate: new Date(),
+                likeIt: false,
+                star: 'star_border',
+                fill: 'black',
+                user: {
+                    userId: 1,
+                    userName: 'Edgar Ulises Garcia Gallegos',
+                    userImgPath: 'src/app/resources/profile_edgar.svg'
+                    },
+                message: 'Se ofrecen servicion de consultaria de software, trabajamos bajo proyectos y tambien realizamos cotizaciones para tus proyectos de software. Comparanos.'
             },
             {
-                name: 'Busqueda',
-                icon: 'person',
-                sref: '.profile'
+                postId: 2,
+                postDate: new Date(),
+                likeIt: false,
+                star: 'star_border',
+                fill: 'black',
+                user: {
+                    userId: 1,
+                    userName: 'Edgar Ulises Garcia Gallegos',
+                    userImgPath: 'src/app/resources/profile_edgar.svg'
+                },
+                message: 'Se ofrecen servicion de consultaria de software, trabajamos bajo proyectos y tambien realizamos cotizaciones para tus proyectos de software. Comparanos.'
             },
             {
-                name: 'Amigos',
-                icon: 'view_module',
-                sref: '.table'
-            },
-            {
-                name: 'Estadisticas',
-                icon: 'view_module',
-                sref: '.table'
+                postId: 3,
+                postDate: new Date(),
+                likeIt: false,
+                star: 'star_border',
+                fill: 'black',
+                user: {
+                    userId: 1,
+                    userName: 'Edgar Ulises Garcia Gallegos',
+                    userImgPath: 'src/app/resources/profile_edgar.svg'
+                },
+                message: 'Se ofrecen servicion de consultaria de software, trabajamos bajo proyectos y tambien realizamos cotizaciones para tus proyectos de software. Comparanos.'
             }
         ];
 
+
     }
 
-    selectItem (item) {
+    toggleStart(item) {
+
+        if (item.likeIt) {
+            item.likeIt = false;
+            item.star = 'star_border';
+            item.fill = 'black';
+        } else {
+            item.likeIt = true;
+            item.star = 'star';
+            item.fill = '#FFFF00';
+        }
+
 
     }
 
@@ -42,4 +73,4 @@ export default class FeedController {
 
 }
 
-FeedController.$inject = ['$state'];
+FeedController.$inject = ['$scope'];

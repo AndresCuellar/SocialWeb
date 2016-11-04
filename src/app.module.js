@@ -8,6 +8,7 @@ import 'angular-material';
 import 'angular-animate';
 import 'angular-aria';
 import 'angular-material/angular-material.css';
+import 'angular-material-icons';
 import uiRouter from 'angular-ui-router';
 
 
@@ -20,6 +21,7 @@ import feed from './app/states/home/feed/feed.module';
 
 export default angular.module('app', [
     'ngMaterial',
+    'ngMdIcons',
     uiRouter,
     login.name,
     home.name,
